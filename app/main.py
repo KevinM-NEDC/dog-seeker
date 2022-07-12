@@ -23,7 +23,8 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 
-model = torch.hub.load("ultralytics/yolov5", "custom", path = 'best.pt', force_reload=True)
+model = torch.hub.load("ultralytics/yolov5", "custom", path = 'best4.pt', force_reload=True)
+#model.conf = 0.6
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -53,12 +54,26 @@ def home():
     return render_template('home.html')
 
 
-@app.route(f'{base_url}/uploads/<filename>')
+@app.route(f'{base_url}/uploads/<filename>', methods=['GET', 'POST'])
 def uploaded_file(filename):
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+
+        file = request.files['file']
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('uploaded_file', filename=filename))
     here = os.getcwd()
     image_path = os.path.join(here, app.config['UPLOAD_FOLDER'], filename)
     results = model(image_path, size=416)
-    if len(results.pandas().xyxy) > 0:
+    if len(results.pandas().xyxy[0]) >  0:
         results.print()
         save_dir = os.path.join(here, app.config['UPLOAD_FOLDER'])
         results.save(save_dir=save_dir)
@@ -87,12 +102,12 @@ def uploaded_file(filename):
         labels = set(labels)
         labels = [emotion.capitalize() for emotion in labels]
         labels = and_syntax(labels)
-        return render_template('results.html', confidences=format_confidences, labels=labels,
+        return render_template('results-example.html', confidences=format_confidences, labels=labels,
                                old_filename=filename,
                                filename=filename)
+
     else:
-        found = False
-        return render_template('results.html', labels='No Emotion', old_filename=filename, filename=filename)
+        return render_template('results-example.html', labels='no dogs', old_filename=filename, filename=filename)
 
 
 @app.route(f'{base_url}/uploads/<path:filename>')
@@ -105,9 +120,29 @@ def files(filename):
 # def team_members():
 #     return render_template('team_members.html') # would need to actually make this page
 
+@app.route(f'{base_url}/test', methods=['GET', 'POST'])
+def test():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit an empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('uploaded_file', filename=filename))
+    return render_template('test.html')
+
 if __name__ == '__main__':
     # IMPORTANT: change url to the site where you are editing this file.
-    website_url = 'url'
-    
+    website_url = 'cocalc12.ai-camp.dev'
     print(f'Try to open\n\n    https://{website_url}' + base_url + '\n\n')
     app.run(host = '0.0.0.0', port=port, debug=True)
