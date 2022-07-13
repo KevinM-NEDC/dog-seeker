@@ -1,0 +1,66 @@
+{
+  "Husky":
+  {
+    "Personality": "Free-spirited, Good-natured, Playful",
+    "Description": "Siberian huskies are classic northern dogs. They are intelligent but somewhat independent and stubborn. They thrive on human company, but need firm, gentle training right from puppy hood.",
+  }, 
+  "Shiba Inu":
+  {
+    "Personality": "Faithful, alert, confident",
+    "Description": "The well-bred Shiba Inu is good-natured, alert, and bold. He is strong-willed and confident, and often has his own ideas about things. He is loyal and affectionate with his family, though tends to be suspicious of strangers."
+  }, 
+  "Akita Inu":
+  {
+    "Personality": "Loyal, intelligent, courageous",
+    "Description": "The Akita is a bold and willful dog, naturally wary of strangers but extremely loyal to their family. Akitas will gladly share their silly, affectionate side with family and friends, and they thrive on human companionship.",
+  },
+  "Australian Shepard":
+  {
+    "Personality": "Outgoing, friendly, Smart",
+    "Description": "Australian Shepherds need extensive exposure to people and to unusual sights and sounds. Some Australian Shepherds are exceptionally eager to please, while others are definitely not. Some Aussies, especially females, can be manipulative and are smart enough to figure out how to get what they want.",
+  },
+  "German Shepherd":
+  {
+    "Personality": "Stubborn, Loyal, Courageous",
+    "Description": "The German Shepherd personality is aloof but not usually aggressive. They're reserved dogs; they don't make friends immediately, but once they do, they're extremely loyal. With their family, they're easy-going and approachable.",
+  },
+  "Dachshund":
+  {"Personality": "Clever, Lively, Stubborn",
+   "Description": "The Dachshund is described as clever, lively, and courageous to the point of rashness. He's bred for perseverance. Dachshunds have a reputation for being entertaining and fearless, but what they want most is to cuddle with their people.",
+  },
+  "Cavalier King Charles Spaniel":
+  {
+    "Personality": "Gentle, Patient, Affectionate",
+    "Description": "The Cavalier is a sweet, gentle, and affectionate breed, very eager to please their human. They are friendly with strangers and with other animals, and they can do very well with children.",
+  },
+  "Pitbull":
+  {
+    "Personality": "Stubborn, Intelligent, Gentle",
+    "Description": "Pit bulls are people-oriented, affectionate, and playful. While they'll adapt their energy levels to their living situation, they're athletic dogs who do well with ample daily exercise and mental stimulation.",
+  },
+  "Basset Hound":
+  {
+    "Personality": "Friendly, Affectionate, Devoted",
+    "Description": "The basset hound is a friendly, easygoing dog. Originally hunting in packs, they tend to be good with other dogs and other pets in general. Bassets are people oriented and get along well with children.",
+  },
+  "Rottweiler":
+  {
+    "Personality": "Steady, Alert, Courageous",
+    "Description": "The Rottweiler is a robust working breed of great strength descended from the mastiffs of the Roman legions. A gentle playmate and protector within the family circle, the Rottie observes the outside world with a self-assured aloofnes",
+  },
+  "Golden Retriever":
+  {
+    "Personality": "Even-tempered, Intelligent, Affectionate",
+    "Description": "Because golden retrievers are easy to please, they respond positively to obedience training. They complement this trait by being playful, affectionate and even-tempered. Golden retrievers are very versatile.",
+  },
+  "Beagle":
+  {
+    "Personality": "Amiable, Intelligent, Excitable",
+    "Description": "Beagles' friendly and outgoing nature makes them great family pets, but they can be boisterous so, like all dogs, it's wise to supervise them around small children. Beagles are eager to please and highly intelligent so will love plenty of training and mental stimulation.",
+  },
+  "Corgi":
+  {
+    "Personality": "Happy, Loving, and Intelligent",
+    "Description": "This breed is a generally well-mannered small dog that is affectionate and cuddly. These dogs tend to be more confident and friendly with strangers than many other smaller breeds, making them a generally good apartment dog.",
+  },
+}

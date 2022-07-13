@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" nt="" />
-        <title>Dog Seeker</title>
+        <title>Dog Seeker Results</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap Icons-->
@@ -16,42 +16,42 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='../static/css/style_og.css')}}" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Home</a>
+                <a class="navbar-brand" href="../">Home</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">info</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Info</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead/Button -->
+        <!-- Results/Button -->
         <header class="masthead">
             <div class="container px-4 px-lg-5 h-100">
-                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-8 align-self-end">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center ">
+                    <div class="col-lg-8 align-self-end text-center">
                         <h1 class="text-white font-weight-bold">Dog Seeker AI</h1>
-                        <hr class="divider" />
+                        <hr class="divider"/>
                     </div>
 
-                  
-                      <section id="msg-box4-2" data-rv-view="2" style="background-color: rgb(255, 255, 255); margin-top: 8rem; padding-top: 3rem; padding-bottom: 0rem;">
-       <div class="container">  
+                      <section id="msg-box4-2" data-rv-view="2" style="background-color: rgb(255, 255, 255); margin-top: 0rem; padding-top: 3rem; padding-bottom: 0rem; margin-bottom:0rem;">
+       <div class="container">
           <div class="row">
+            <div class="col justify-content-center align-items-center text-center">
           <h3 class="section-title display-4">Recognition Results</h3>
-                    <h3 class="we-found btn-text display-4">We found <span >{{labels}}!</span></h3>
 
                     {% if labels == 'no dogs' %}
+                <h3 class="we-found btn-text display-4">We found <span>{{labels}}!</span></h3>
                     <div>We missed? See why below.</div>
                     {% else %}
+              <h3 class="we-found btn-text display-4">We found a(n) <span>{{labels}}!</span></h3>
                     <div class="lead"><em>with {{ confidences }} confidence.</em></div>
                     {% endif %}
 
@@ -59,28 +59,45 @@
                         <form id='seefood_form' method=post enctype=multipart/form-data>
                             <input id="seefood_input_field" name="file" type="file" onchange="this.form.submit();" hidden/>
                         </form>
-                        <button href="" target="_blank" class="btn btn-white btn-circled btn-results btn-text">
+                        <button href="" target="_blank" class="btn btn-primary btn-xl">
                             <i class="fas fa-camera pr-2 left" aria-hidden="true"></i> Next Photo
                         </button>
                     </a>
-                </div>
+            </div>
                 <div class="col">
-                    <img class="mbr-figure" src="{{ url_for('static', filename='uploads/' + filename)}}">
+                    {% if labels == 'no dogs' %}
+                    <img class="mbr-figure img-fluid" src="{{ url_for('static', filename='uploads/' + filename)}} " style="height:50vh;">
+                    {% else %}
+                    <img class="mbr-figure img-fluid" src="{{ url_for('static', filename='results/' + filename)}} " style="height:50vh;">
+                    {% endif %}
+                  <!--<div style='text-align:right'></div>-->
                 </div>
-                </div>
+               </div>
+                        </div>
+                                                <hr class="divider"/>
+
     </section>
                 </div>
             </div>
-          
-          
+                  </header>
+
+
         <!-- About-->
         <section class="page-section bg-primary" id="about">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Welcome to AI camp</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">AI camp is a 3 week online course that teaches coding, artificial intelligence, career choices, and how to make decisions using data.</p>
+                      {% if labels == 'no dogs' %}
+                        <h2 class="text-white mt-0">Why do we miss sometimes?</h2>
+                        <hr class="divider divider-light"/>
+                        <p class="text-white-75 mb-4">Our AI is trained with over 6,000 labeled images of different dog breeds to accurately identify 13 of the most common dog breeds.</p>
+                      {% else %}
+                      <!-- Information about the dogs -->
+                      <h2 class="text-white mt-0">Information about this breed: {{dog_Names[0]}}</h2>
+                      <hr class="divider divider-light"/>
+                      <p class="text-white-75 mb-4">{{ dog_Personality }}</p>
+                      <p class="text-white-75 mb-4">{{ dog_Description }}</p>
+                      {% endif %}
                     </div>
                 </div>
             </div>
@@ -93,7 +110,7 @@
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <div class="mb-2"><i class="bi bi-clock fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Puppy identification</h3>
                             <p class="text-muted mb-0">Able to identify dogs at all ages</p>
                         </div>
@@ -102,21 +119,21 @@
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">13 Registered Dog Breeds</h3>
-                            <p class="text-muted mb-0">As of right now, we have taught the AI to recognize 13 dog breeds. These breeds are: Akita, Shiba Inu, Australian Shepard, Beagle, Cavalier King Charles Spaniel, Corgi, Dachshund, German Shepard, Golden Retriever, Husky, Pitbull, Basset Hound, and Rottweiler.</p>
+                            <p class="text-muted mb-0">As of right now, we have taught the AI to recognize 13 dog breeds: Akita, Shiba Inu, Australian Shepard, Beagle, Cavalier King Charles Spaniel, Corgi, Dachshund, German Shepard, Golden Retriever, Husky, Pitbull, Basset Hound, and Rottweiler.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">crazy accuracy no lie</h3>
-                            <p class="text-muted mb-0">You can trust that you will be getting the correct information most of the time</p>
+                            <div class="mb-2"><i class="bi bi-clipboard-check-fill fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2"> High Accuracy</h3>
+                            <p class="text-muted mb-0">You can trust the Dog-Seeker to reliably identify the dog you're wondering about</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Made with Love</h3>
-                            <p class="text-muted mb-0">We have spent a majority of 3 weeks working on this AI, and we think that we have tried our best to overcome our difficulties</p>
+                            <p class="text-muted mb-0">We have spent a majority of 3 weeks working on this AI, and we think that we have tried our best to overcome the difficulties that were thrown our way</p>
                         </div>
                     </div>
                 </div>
@@ -132,13 +149,13 @@
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="{{ url_for('static', filename='../static/js/scripts.js')}}"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+          </body>
 </html>
     <script>
         // added to get upload with a button working

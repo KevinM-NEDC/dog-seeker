@@ -67,8 +67,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-
-      ;
+  box-sizing: border-box;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -6999,9 +6998,11 @@ textarea.form-control-lg {
 .mh-100 {
   max-height: 100% !important;
 }
+
 .vh-50 {
     height: 50vh !important;
 }
+
 .vh-100 {
   height: 100vh !important;
 }
@@ -11476,10 +11477,3 @@ header.masthead h1, header.masthead .h1 {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
-
-    .test{
-        height: 50%;
-        padding: 35px;
-        padding-bottom:35px;
-        margin-bottom:35px;
-    }

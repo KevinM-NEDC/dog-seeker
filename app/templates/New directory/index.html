@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta¢ charset="utf-8" />
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" nt="" />
-        <title>Dog Seeker</title>
+        <title>Creative - Dog Se<div style='text-align:center'></div>eker</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap Icons-->
@@ -16,9 +16,7 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <!-- <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />-->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style_og.css')}}">
-      
+        <link href="../css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -28,14 +26,14 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#services">Info</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">info</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead/Button -->
+        <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
@@ -44,13 +42,8 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">Dog Seeker is an AI detection program that identifies the breed of a dog. To start, upload an image of a dog and the AI will do its best to identify from its registered 13 dog breeds</p>
-                      <a class="mb-0" id='seefood_button'>
-                        <form id='seefood_form' method=post enctype=multipart/form-data>
-                          <input id="seefood_input_field" name="file" type="file" onchange="this.form.submit();" hidden/>
-                        </form>
-                        <button href="" target="_blank" class="btn btn-primary btn-xl">Click to see dog breed</button>
-                      </a>
+                        <p class="text-white-75 mb-5">Dog Seeker is an ai detection program that identifies the breed of a dog. To start, upload an image of a dog and the AI will do its best to identify from its registered 13 dog breeds</p>
+                        <a class="btn btn-primary btn-xl" href="#about">Upload</a>
                     </div>
                 </div>
             </div>
@@ -60,9 +53,10 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">How Does it work?</h2>
+                        <h2 class="text-white mt-0">Welcome to AI camp</h2>
                         <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">Our AI was trained with over 6,000 labeled images of different dog breeds to accurately identify 13 of the most common dog breeds. Some images below provide an example of our models predictions.</p>
+                        <p class="text-white-75 mb-4">AI camp is a 3 week online course that teaches coding, artificial intelligence, career choices, and how to make decisions using data.</p>
+                        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
                     </div>
                 </div>
             </div>
@@ -72,10 +66,10 @@
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">At Your Service</h2>
                 <hr class="divider" />
-                <div class="row gx-4 gx-lg-5 row-cols-4">
+                <div class="row gx-4 gx-lg-5">
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi bi-clock fs-1 text-primary"></i></div>
+                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Puppy identification</h3>
                             <p class="text-muted mb-0">Able to identify dogs at all ages</p>
                         </div>
@@ -84,21 +78,21 @@
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">13 Registered Dog Breeds</h3>
-                            <p class="text-muted mb-0">As of right now, we have taught the AI to recognize 13 dog breeds: Akita, Shiba Inu, Australian Shepard, Beagle, Cavalier King Charles Spaniel, Corgi, Dachshund, German Shepard, Golden Retriever, Husky, Pitbull, Basset Hound, and Rottweiler.</p>
+                            <p class="text-muted mb-0">As of right now, we have taught the AI to recognize 13 dog breeds. These breeds are: Akita, Shiba Inu, Australian Shepard, Beagle, Cavalier King Charles Spaniel, Corgi, Dachshund, German Shepard, Golden Retriever, Husky, Pitbull, Basset Hound, and Rottweiler.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi bi-clipboard-check-fill fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">High Accuracy</h3>
-                            <p class="text-muted mb-0">You can trust the Dog-Seeker to reliably identify the dog you're wondering about</p>
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">crazy accuracy no lie</h3>
+                            <p class="text-muted mb-0">You can trust that you will be getting the correct information most of the time</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Made with Love</h3>
-                            <p class="text-muted mb-0">We have spent the majority of 3 weeks working on this AI, and we think that we have tried our best to overcome our difficulties</p>
+                            <p class="text-muted mb-0">We have spent a majority of 3 weeks working on this AI, and we think that we have tried our best to overcome our difficulties</p>
                         </div>
                     </div>
                 </div>
@@ -109,56 +103,82 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="{{ url_for('static', filename='../static/images/AustralianShepherdWithBox.jpg')}}" title="Australian Shepherd">
-                            <img class="img-fluid" src="{{ url_for('static', filename='../static/images/AustralianShepherd.jpg')}}" alt="..." />
+                        <a class="portfolio-box" href="../assets/img/portfolio/fullsize/1.jpg" title="Project Name">
+                            <img class="img-fluid" src="../assets/img/portfolio/thumbnails/1.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Australian Shepard Detection</div>
+                                <div class="project-name">Project Name</div>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="{{ url_for('static', filename='../static/images/HuskyWithBox.jpg')}}" title="Husky">
-                            <img class="img-fluid" src="{{ url_for('static', filename='../static/images/Husky.jpg')}}" alt="..." />
+                        <a class="portfolio-box" href="../assets/img/portfolio/fullsize/2.jpg" title="Project Name">
+                            <img class="img-fluid" src="../assets/img/portfolio/thumbnails/2.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Husky Detection</div>
+                                <div class="project-name">Project Name</div>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="{{ url_for('static', filename='../static/images/PitbullWithBox1.jpg')}}" title="Pitbull">
-                            <img class="img-fluid" src="{{ url_for('static', filename='../static/images/Pitbull.jpg')}}" alt="..." />
+                        <a class="portfolio-box" href="../assets/img/portfolio/fullsize/3.jpg" title="Project Name">
+                            <img class="img-fluid" src="../assets/img/portfolio/thumbnails/3.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Pitbull Detection</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="../assets/img/portfolio/fullsize/4.jpg" title="Project Name">
+                            <img class="img-fluid" src="../assets/img/portfolio/thumbnails/4.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="../assets/img/portfolio/fullsize/5.jpg" title="Project Name">
+                            <img class="img-fluid" src="../assets/img/portfolio/thumbnails/5.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="../assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+                            <img class="img-fluid" src="../assets/img/portfolio/thumbnails/6.jpg" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
                             </div>
                         </a>
                     </div>
                 </div>
-              </div>
-          </div>
-        <!-- Team -->
+            </div>
+        </div>
+        <!-- Call to action-->
               <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
                     <h3 class="section-subheading text-muted">Meet the Screaming Sirens</h3>
-                  <h6 class="section-subheading text-muted">Art Drawn By Eugene Lim</h6>
                 </div>
                 <div class="row">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="https://cocalc12.ai-camp.dev/375a9615-5617-48b6-a132-fe9d08f3c36b/raw/somethingmoreinformationalaboutwhatitis/app/static/images/imsorryalex.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg" alt="..." />
                             <h4>Alex Nguyen</h4>
-                            <p class="text-muted">Instructor</p>
+                            <p class="text-muted">Team Leader</p>
                         </div>
                     </div>
                 <div class="row">
                   <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="https://cocalc12.ai-camp.dev/375a9615-5617-48b6-a132-fe9d08f3c36b/raw/somethingmoreinformationalaboutwhatitis/app/static/images/eugene.jpg" alt="..." /> 
+                            <img class="mx-auto rounded-circle" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg" alt="..." />
                             <h4>Eugene Lim</h4>
-                            <p class="text-muted">AI Developer, Back-end Designer, "Artist"</p>
+                            <p class="text-muted">AI Developer, Back-end Designer</p>
                         </div>
                 </div>
 
@@ -176,11 +196,11 @@
                             <p class="text-muted">AI Developer, Back-end Designer</p>
                         </div>
                   </div>
-              </div>                
+              </div>
 <div class="row">
                   <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="https://cocalc12.ai-camp.dev/375a9615-5617-48b6-a132-fe9d08f3c36b/raw/somethingmoreinformationalaboutwhatitis/app/static/images/imsorrykevinh.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg" alt="..." />
                             <h4>Kevin Ha</h4>
                             <p class="text-muted">AI Developer, Front-end Designer</p>
                         </div>
@@ -195,7 +215,7 @@
                   </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="https://cocalc12.ai-camp.dev/375a9615-5617-48b6-a132-fe9d08f3c36b/raw/somethingmoreinformationalaboutwhatitis/app/static/images/imsorrymichael.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg" alt="..." />
                             <h4>Michael Doscher</h4>
                             <p class="text-muted">AI Developer, Front-end Designer</p>
                         </div>
@@ -212,9 +232,9 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js">     </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
-        <script src="{{ url_for('static', filename='../static/js/scripts.js')}}"></script>
+        <script src="../js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
@@ -222,26 +242,3 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
-    <script>
-        // added to get upload with a button working
-        document.getElementById('seefood_button').addEventListener('click', openDialog);
-
-        function openDialog() {
-            document.getElementById('seefood_input_field').click();
-        }
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#spinner").bind("ajaxSend", function() {
-                $(this).show();
-            }).bind("ajaxStop", function() {
-                $(this).hide();
-            }).bind("ajaxError", function() {
-                $(this).hide();
-            });
-            // seefood_input_field
-            $('#seefood_button').click(function() {
-
-            });
-        });
-    </script>
