@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Info</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../info">Info</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                 <h3 class="we-found btn-text display-4">We found <span>{{labels}}!</span></h3>
                     <div>We missed? See why below.</div>
                     {% else %}
-              <h3 class="we-found btn-text display-4">We found a(n) <span>{{labels}}!</span></h3>
+              <h3 class="we-found btn-text display-4">We found {{a_an}} <span>{{labels}}!</span></h3>
                     <div class="lead"><em>with {{ confidences }} confidence.</em></div>
                     {% endif %}
 
@@ -90,56 +90,22 @@
                       {% if labels == 'no dogs' %}
                         <h2 class="text-white mt-0">Why do we miss sometimes?</h2>
                         <hr class="divider divider-light"/>
-                        <p class="text-white-75 mb-4">Our AI is trained with over 6,000 labeled images of different dog breeds to accurately identify 13 of the most common dog breeds.</p>
+                        <p class="text-white-75 mb-4">We only had three weeks to decide what project to work on, to train the AI that identifies the dog breed, and to build this very website. This could lead to some errors where our model will misidentify a dog or not even see one at all. Also it has to be kept in mind that this AI would not be able to identify any of the unsupported breeds and has a greatly decreased accuracy with dogs that are not purebred. </p>
                       {% else %}
                       <!-- Information about the dogs -->
-                      <h2 class="text-white mt-0">Information about this breed: {{dog_Names[0]}}</h2>
-                      <hr class="divider divider-light"/>
-                      <p class="text-white-75 mb-4">{{ dog_Personality }}</p>
-                      <p class="text-white-75 mb-4">{{ dog_Description }}</p>
+                        {% for dog in dog_Names %}
+                        <section>
+                          <h2 class="text-white mt-0">Information about this breed: {{dog_Names[loop.index0]}}</h2>
+                          <hr class="divider divider-light"/>
+                          <p class="text-white-75 mb-4">{{ dog_Personality[loop.index0]}}</p>
+                          <p class="text-white-75 mb-4">{{ dog_Description[loop.index0]}}</p>
+                        </section>
+                        {%endfor%}
                       {% endif %}
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Services-->
-        <section class="page-section" id="services">
-            <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">At Your Service</h2>
-                <hr class="divider" />
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi bi-clock fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Puppy identification</h3>
-                            <p class="text-muted mb-0">Able to identify dogs at all ages</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">13 Registered Dog Breeds</h3>
-                            <p class="text-muted mb-0">As of right now, we have taught the AI to recognize 13 dog breeds: Akita, Shiba Inu, Australian Shepard, Beagle, Cavalier King Charles Spaniel, Corgi, Dachshund, German Shepard, Golden Retriever, Husky, Pitbull, Basset Hound, and Rottweiler.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi bi-clipboard-check-fill fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2"> High Accuracy</h3>
-                            <p class="text-muted mb-0">You can trust the Dog-Seeker to reliably identify the dog you're wondering about</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Made with Love</h3>
-                            <p class="text-muted mb-0">We have spent a majority of 3 weeks working on this AI, and we think that we have tried our best to overcome the difficulties that were thrown our way</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Contact-->
         <!-- Footer-->
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Screaming Sirens</div></div>

@@ -667,7 +667,7 @@ progress {
     max-width: 1320px;
   }
 }
-.row {
+ {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
@@ -11330,6 +11330,10 @@ hr.divider-light {
   background-color: #fff;
 }
 
+hr.divider-muted {
+  background-color: #6c757d;
+}
+
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: #fff;
@@ -11401,6 +11405,7 @@ header.masthead {
   background-attachment: scroll;
   background-size: cover;
 }
+
 header.masthead h1, header.masthead .h1 {
   font-size: 2.25rem;
 }

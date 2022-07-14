@@ -10,7 +10,7 @@ import pandas as pd
 
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
-port = 12345
+port = 12346
 base_url = get_base_url(port)
 
 # if the base url is not empty, then the server is running in development, and we need to specify the static folder so that the static files are served
@@ -31,6 +31,11 @@ app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 
 model = torch.hub.load("ultralytics/yolov5", "custom", path = 'best4.pt', force_reload=True)
 model.conf = 0.6
+def loop_dict(dictionary, labels, key):
+    resultList = []
+    for label in labels:
+        resultList.append(dictionary[label][key])
+    return resultList
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -120,17 +125,23 @@ def uploaded_file(filename): #
                 labels[i] = 'Shiba Inu'
             elif labels[i] == "Akita":
                 labels[i] = "Akita Inu"
-        dog_Names= labels
-        dog_Info= dummy_json[dog_Names[0]]['Personality']
-        dog_desc= dummy_json[dog_Names[0]]['Description']
+        dog_Names = labels
+        dog_Info= loop_dict(dummy_json, labels, 'Personality')
+        dog_desc= loop_dict(dummy_json, labels, 'Description')
         labels = and_syntax(labels)
+        list_of_vowls = ['a','e','u', 'i', 'o','A','E','U','I','O']
+        if any(x in list_of_vowls for x in labels[0]):
+            a_an= 'an'
+        else:
+            a_an = 'a'
         # labels: sorting and capitalizing, putting into function
         return render_template('results.html', confidences=format_confidences, labels=labels,
                                old_filename=filename,
                                filename=result_filename,
-                               dog_Names = dog_Names, #Do we need dog names? We could just replace each mention of dog_Names with labels 
+                               dog_Names = dog_Names, #labels is being used in the and_syntax and would have a string instead of a list
                               dog_Personality=dog_Info,
-                              dog_Description=dog_desc)
+                              dog_Description=dog_desc,
+                              a_an=a_an)
 
     else:
         return render_template('results.html', labels='no dogs', old_filename=filename, filename=filename)
@@ -143,6 +154,9 @@ def test():
 def files(filename):
     return send_from_directory(UPLOAD_FOLDER, filename, as_attachment=True)
 
+@app.route(f'{base_url}/info')
+def info():
+    return render_template('info.html')
 # define additional routes here
 # for example:
 # @app.route(f'{base_url}/team_members')
