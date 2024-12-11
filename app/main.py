@@ -1,5 +1,5 @@
 # import requirements needed
-from flask import Flask, render_template
+from flask import Flask, rende6_template
 from utils import get_base_url
 
 # setup the webserver
